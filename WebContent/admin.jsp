@@ -8,7 +8,7 @@
 <title>Admin</title>
 </head>
 <body>
-	<s:form action="">
+	<s:form action="admin">
 		<s:textfield label="Username" key="userId" ></s:textfield>
 		<s:password label="Password" key="password"  ></s:password>
 		<s:submit></s:submit>

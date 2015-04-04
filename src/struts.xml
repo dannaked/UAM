@@ -9,6 +9,9 @@
 	<constant name="struts.devMode" value="true" />
 	
 	<constant name="struts.configuration.xml.reload" value="true" />
+
+	<include file="login.xml"></include>
+
 <!-- 
 	
 	<action name="Nombre_Accion" class="Paquete.Nombre_Clase">
@@ -22,12 +25,7 @@
    		
 		</action>
  	</package>
- <!-- 
  
- 	<package name="admin" extends="struts-default">
- 		<action name="admin" class="Action.admin">
-   			<result name="success">/admin.jsp</result>
-		</action>
- 	</package>
-  -->	
+ 
+ 
 </struts>

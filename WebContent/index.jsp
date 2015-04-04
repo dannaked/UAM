@@ -19,6 +19,8 @@
 
 </head>
 <body>
+<s:property/>
+
 <h1>Noticias UAM</h1>
 	<%
 	

@@ -67,10 +67,10 @@ public class GeneradorPersona {
 		int rdm;
 		do{
 			rdm = ( int )( Math.random() * 7 + 1 );
-			System.out.println( rdm );
+			//System.out.println( rdm );
 		}
 		while( ( listaApellidos.size() - 1 ) < rdm  );
-		System.out.println( listaNombres.get( rdm ) );
+		//System.out.println( listaNombres.get( rdm ) );
 	return listaApellidos.get( rdm );
 	}
 	

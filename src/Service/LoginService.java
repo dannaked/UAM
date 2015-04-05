@@ -1,15 +1,16 @@
 package Service;
 
-import org.apache.catalina.User;
+import ModeloDeAplicacion.Usuario;
 
 public class LoginService {
 	
-	public boolean verificarLogin( User user ){
+	public boolean verificarLogin( Usuario user ){
 		
 		if( user.getUsername().equals( "userId" ) && user.getPassword().equals( "password" ) ){
 			
 		return true;	
 		}
+		
 	return false;
 	}
 }

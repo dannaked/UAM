@@ -1,26 +1,48 @@
 package Actions;
 
-import com.opensymphony.xwork2.Action;
+import Service.LoginService;
+import ModeloDeAplicacion.Usuario;
+import Service.LoginService;
 
-public class LoginAction implements Action{
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+
+import org.apache.commons.lang3.StringUtils;
+
+public class LoginAction extends ActionSupport implements ModelDriven {
 	
-	private String userId;
-	private String password;
+	//Son asignados por Struts al llamar esta clase como un Action
+	private Usuario user = new Usuario();
 	
-	private static String SUCCESS = "success";
-	private static String FAIL  = "fail";
+
 	
 	public String execute(){
 		
-		///Codigo para validar el login
+		LoginService logService = new LoginService();
+		 
 		
-		if( getUserId().equals( "userId" ) && getPassword().equals( "password" ) ){
+		///Código para validar el login
+		
+		if( logService.verificarLogin( user ) ){
 		
 		return SUCCESS;
-		}
-		else{
+		}	
+	return LOGIN;
+	}
+	/*
+	 * Implementando el metodo validate de ActionSupport
+	 * */
+	public void validate(){
+		
+		if( StringUtils.isEmpty( user.getUsername() ) ){
 			
-		return FAIL;
+			//Ussername vacío
+			addFieldError( "userId", "El nombre de usuario NO puede quedar vacío" );
+		}
+		if( StringUtils.isEmpty( user.getPassword() ) ){
+			
+			//Password vacía
+			addFieldError( "password", "La contraseña NO puede quedar vacío" );
 		}
 	}
 	
@@ -28,18 +50,30 @@ public class LoginAction implements Action{
 	//geters & seters
 	*/
 	public String getPassword() {
-		return password;
+		
+	return user.getPassword();
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassword( String password ) {
+		
+		this.user.setPassword( password );
 	}
 
 	public String getUserId() {
-		return userId;
+		
+	return this.user.getUsername();
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserId( String userId ) {
+		
+		this.user.setUsername( userId );
 	}
+	
+	@Override
+	public Object getModel() {
+		
+		
+	return user;
+	}
+	
 }

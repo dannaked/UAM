@@ -9,9 +9,13 @@
  	<package name="admin" namespace="/"  extends="struts-default">
  		<action name="admin" >
    			<result>/admin.jsp</result>
-   			
-   			
-   			 
+		</action>
+ 	</package>
+ 	<package name="login" namespace="/"  extends="struts-default">
+ 		<action name="login" class="Actions.LoginAction" >
+   			<result name="success" >/Noticia.jsp</result>
+   			<result name="login" >/admin.jsp</result>
+   			<result name="input" >/admin.jsp</result>
 		</action>
  	</package>
 </struts>

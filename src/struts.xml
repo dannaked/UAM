@@ -22,7 +22,7 @@
  
  	<package name="default" extends="struts-default">
  		<action name="noticia" class="ModeloDeAplicacion.ListaNoticias">
-   		
+   			<interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
 		</action>
  	</package>
  

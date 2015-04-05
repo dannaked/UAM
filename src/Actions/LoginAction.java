@@ -69,6 +69,9 @@ public class LoginAction extends ActionSupport implements ModelDriven {
 		this.user.setUsername( userId );
 	}
 	
+	/*
+	 * sobreescritura del metodo getModel() en ModelDriven
+	 */
 	@Override
 	public Object getModel() {
 		

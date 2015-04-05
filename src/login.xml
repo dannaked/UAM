@@ -6,11 +6,25 @@
     
 <struts>
 	
+	<!-- Mapea a la ruta UAM/admin -->
  	<package name="admin" namespace="/"  extends="struts-default">
+ 				<!-- 
+ 		<interceptors>
+       
+       		
+    	   	<interceptor name="logger" class=".."/>
+    
+ 	  	</interceptors>
+ 	   	 -->
+ 		
+ 		
  		<action name="admin" >
    			<result>/admin.jsp</result>
 		</action>
  	</package>
+ 	
+ 	
+ 	
  	<package name="login" namespace="/"  extends="struts-default">
  		<action name="login" class="Actions.LoginAction" >
    			<result name="success" >/Noticia.jsp</result>

@@ -8,8 +8,9 @@
 <title> Noticia </title>
 </head>
 <body>
+<s:property/>
 	<%
-		
+		getA();	
 	
 	%>
 </body>
